@@ -1,0 +1,67 @@
+body {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background: darkslategray;
+    margin: 0;
+
+    .content {
+        background: black;
+        padding: 2rem;
+        justify-items: center;
+        align-items: center;
+        display: grid;
+        
+        p {
+            color: white;
+            background: darkblue;
+            padding: .7rem;
+            margin: 1rem .7rem;
+        }
+        
+        form {
+            margin: 1rem;
+            background: lightcoral;
+            justify-items: center;
+            align-items: center;
+
+            input {
+                padding: .6rem;
+                margin: .4rem;
+            }
+        }
+        .btn {
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            background: grey;
+            margin: 0;
+            
+           
+            a {
+                
+                padding: .5rem;
+                margin: .5rem;
+                background: darkcyan;
+                text-decoration: none;
+                color: black;
+        
+                &.fetch {
+                    background: green;
+                    border: 2px solid black;
+                    border-radius: 999rem;
+                }
+                &.update {
+                    background: yellow;
+                    border: 2px solid black;
+                    border-radius: 999rem;
+                }
+                &.delete {
+                    background: red;
+                    border: 2px solid black;
+                    border-radius: 999rem;
+                }
+            }
+        }
+    }
+}
