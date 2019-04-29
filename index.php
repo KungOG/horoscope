@@ -11,17 +11,26 @@
 <body>
     <div class="content">
         <form action="" method="post">
-            <p>Fyll i ditt Födelsedatum nedan</p>
+            <h3>Ange ditt Födelsedatum nedan för att se ditt horoskop</h3>
             <input type="date" name="birthdate"  id="birthdate">
+        </form>
+        <article>
             <div class="btn">
                 <a href="#" onclick="fetchData()" class="fetch">
-                <img src="img/like.svg" alt="">Spara</a>
-                <a href="#" onclick="updateData()" class="update">
-                <img src="img/repeat.svg" alt="">Uppdatera</a>
-                <a href="#" onclick="deleteData()" class="delete">
-                <img src="img/garbage.svg" alt="">Radera</a>
+                <img src="img/like.svg" alt=""></a>
+                <p>Save</p>
             </div>
-        </form>
+            <div class="btn">
+                <a href="#" onclick="updateData()" class="update">
+                <img src="img/repeat.svg" alt=""></a>
+                <p>Update</p>
+            </div>  
+            <div class="btn">
+                <a href="#" onclick="deleteData()" class="delete">
+                <img src="img/garbage.svg" alt=""></a>
+                <p>Delete</p>
+            </div>
+            </article>
         <div id="horoscope"></div>
     </div>
 </body>

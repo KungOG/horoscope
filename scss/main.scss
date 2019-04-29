@@ -1,45 +1,84 @@
+/* Variables */
+$blue: rgba(1, 110, 173, 1);
+$red: rgb(163, 1, 1);
+$yellow: rgb(179, 167, 0);
+$green: rgb(0, 153, 13);
+
+%center {
+    justify-content : center;
+    align-items : center;
+}
+/* - - - - - - - - - - - - */
+/* Animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1, 1);
+        opacity: 0;
+    }
+    35% {
+        opacity: 0.3;
+        color: rgb(175, 0, 0);
+    }
+    50% {
+        opacity: 0.5;
+        color: rgb(212, 0, 0);
+    }
+    70% {
+        opacity: 0.8;
+        color: rgb(255, 0, 0);
+    }
+    100% {
+        transform: scale(2);
+        color: rgb(255, 0, 0);
+        font-size: 1rem;
+    }
+}
+/* - - - - - - - - - - - - */
 body {
-    justify-content: center;
-    align-items: center;
+    @extend %center;
     display: flex;
     background: url('../img/background.jpg');
+    background-size: cover;
     margin: 0;
     height: 100vh;
 
     .content {
-        justify-items: center;
-        align-items: center;
+        background: black;
+        @extend %center;
         display: grid;
+        color: white;
+        padding: 2rem 1rem 2rem 1rem;
+        border-radius: 7%;
 
         #horoscope {
+            @extend %center;
             color: white;
-        }
-        
-        p {
-            color: white;
-            background: black;
-            padding: .7rem;
-            margin: 1rem .7rem;
-        }
-        
+            display: flex;
+            margin: 1rem 0;
+            animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);   
+        }        
         form {
-            background: blue($color: #016ead);
+            background: black;
             display: grid;
-         
+            
             input {
-                align-content: center;
-                justify-content: center;
+                @extend %center;
                 padding: .6rem;
                 margin: .4rem;
             }
+        }
+        article {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
             .btn {
-                justify-content: center;
-                align-items: center;
+                @extend %center;
                 display: flex;
-                margin: 0;
+                
             
                 a {
-                    padding: .5rem;
+                    padding: .7rem;
                     margin: .5rem;
                     text-decoration: none;
                     color: black;
@@ -48,17 +87,16 @@ body {
                         height: 32px;
                         width: 32px;
                     }
-            
-                    &.fetch {
-                        background: green;
-                        border-radius: 999rem;
+                    &.fetch { 
+                        background: $green;
+                        border-radius: 999rem;   
                     }
                     &.update {
-                        background: yellow;
+                        background: $yellow;
                         border-radius: 999rem;
                     }
                     &.delete {
-                        background: red;
+                        background: $red;
                         border-radius: 999rem;
                     }
                     &:hover {

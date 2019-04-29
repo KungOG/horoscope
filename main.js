@@ -31,6 +31,8 @@ function deleteData () {
     }).then((data) => {
         watchData();
         console.log(data);
+    }).catch((error) => {
+        console.log("Error: ", error);
     })
 };
 
@@ -43,7 +45,9 @@ function updateData () {
         return response.json();
     }).then((data) => {
         watchData();
-        console.log(data)
+        console.log(data);
+    }).catch((error) => {
+        console.log("Error: ", error);
     })
 };
 
@@ -54,13 +58,10 @@ function watchData () {
     }).then((response) => {
         return response.json()
     }).then((json) => {
-        console.log(json)
         var showHoroscope = document.getElementById("horoscope");
         showHoroscope.innerText = json;
         console.log(json);
     }).catch((error) => {
-        console.log("Error: ", error)
+        console.log("Error: ", error);
     })
 };
-
-watchData()

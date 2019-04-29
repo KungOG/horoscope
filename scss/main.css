@@ -1,95 +1,153 @@
-body {
+/* Variables */
+body, body .content, body .content #horoscope, body .content form input, body .content article .btn {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+/* - - - - - - - - - - - - */
+/* Animation */
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+    opacity: 0;
+  }
+  35% {
+    opacity: 0.3;
+    color: #af0000;
+  }
+  50% {
+    opacity: 0.5;
+    color: #d40000;
+  }
+  70% {
+    opacity: 0.8;
+    color: red;
+  }
+  100% {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+    color: red;
+    font-size: 1rem;
+  }
+}
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+    opacity: 0;
+  }
+  35% {
+    opacity: 0.3;
+    color: #af0000;
+  }
+  50% {
+    opacity: 0.5;
+    color: #d40000;
+  }
+  70% {
+    opacity: 0.8;
+    color: red;
+  }
+  100% {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+    color: red;
+    font-size: 1rem;
+  }
+}
+
+/* - - - - - - - - - - - - */
+body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   background: url("../img/background.jpg");
+  background-size: cover;
   margin: 0;
   height: 100vh;
 }
 
 body .content {
-  justify-items: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  background: black;
   display: -ms-grid;
   display: grid;
+  color: white;
+  padding: 2rem 1rem 2rem 1rem;
+  border-radius: 7%;
 }
 
 body .content #horoscope {
   color: white;
-}
-
-body .content p {
-  color: white;
-  background: black;
-  padding: .7rem;
-  margin: 1rem .7rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 1rem 0;
+  -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+          animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
 }
 
 body .content form {
-  background: 173;
+  background: black;
   display: -ms-grid;
   display: grid;
 }
 
 body .content form input {
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   padding: .6rem;
   margin: .4rem;
 }
 
-body .content form .btn {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+body .content article {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 0;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-body .content form .btn a {
-  padding: .5rem;
+body .content article .btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body .content article .btn a {
+  padding: .7rem;
   margin: .5rem;
   text-decoration: none;
   color: black;
 }
 
-body .content form .btn a img {
+body .content article .btn a img {
   height: 32px;
   width: 32px;
 }
 
-body .content form .btn a.fetch {
-  background: green;
+body .content article .btn a.fetch {
+  background: #00990d;
   border-radius: 999rem;
 }
 
-body .content form .btn a.update {
-  background: yellow;
+body .content article .btn a.update {
+  background: #b3a700;
   border-radius: 999rem;
 }
 
-body .content form .btn a.delete {
-  background: red;
+body .content article .btn a.delete {
+  background: #a30101;
   border-radius: 999rem;
 }
 
-body .content form .btn a:hover {
+body .content article .btn a:hover {
   background: white;
 }
 /*# sourceMappingURL=main.css.map */
