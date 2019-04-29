@@ -1,18 +1,19 @@
 <?php
 session_start();
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST["day"]) && isset($_POST["month"])) {
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["birthdate"]) && isset($_SESSION["starsign"])) {
 
-        $day = $_POST["day"];
-        $month = $_POST["month"];
+    $date = $_POST["birthdate"];
+    include_once('./database.php');
+    $database = new Database();
+    $sql = "SELECT * FROM horoscope WHERE (dateFrom <= '$date') AND (dateTo >= '$date');";
+    $query = $database->connection->prepare($sql);
+    $query->execute();
+    $result = $query->fetchObject();
+    
+    $_SESSION["starsign"] = $result->horoscopeSign;
+    echo json_encode(true);
 
-        if (!isset($_SESSION["horoscope"])) {
-            $_SESSION["horoscope"]
-            echo json_decode(true);
-            die;
-        }   else {
-            echo json_decode(false);
-        }
-    }
+} else {
+    echo json_encode(false);
 }
 ?>

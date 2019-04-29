@@ -1,22 +1,3 @@
-<?php 
-$servername = "127.0.0.1";
-$username = "root";
-$password = "";
-$dbname = "horoscope";
-
-// Create connection
-$conn = mysqli_connect(
-    $servername, 
-    $username,
-    $password,
-    $dbname
-);
-
-// Check connection
-if ($conn->connect_error) {
-    die( "Connection failed: ".$conn->connect_error);
-}
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,16 +11,15 @@ if ($conn->connect_error) {
 <body>
     <div class="content">
         <form action="" method="post">
-            <p>Välj Födelsedatum nedan</p>
-            <input type="date" name="birthdate">
-            <input type="submit" name="submit">
+            <p>Skriv ditt Födelsedatum nedan</p>
+            <input type="date" name="birthdate" placeholder="YYMMDD" maxlength="6" id="birthdate">
+            <div class="btn">
+                <a href="#" onclick="fetchData()" class="fetch">Spara</a>
+                <a href="#" onclick="updateData()" class="update">Uppdatera</a>
+                <a href="#" onclick="deleteData()" class="delete">Radera</a>
+            </div>
         </form>
-        <p>Mitt Horoskop</p>
-        <div class="btn">
-            <a href="#" onclick="fetchData()" class="fetch">Spara</a>
-            <a href="#" onclick="updateData()" class="update">Uppdatera</a>
-            <a href="#" onclick="deleteData()" class="delete">Radera</a>
-        </div>
+        <div id="horoscope"></div>
     </div>
 </body>
 </html>

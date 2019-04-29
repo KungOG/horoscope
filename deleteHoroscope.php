@@ -1,17 +1,11 @@
 <?php
-
 session_start();
-
 if ($_SERVER["REQUEST_METHOD"] == "DELETE") {
-    if($_SESSION["horoscope"] == null) {
-        echo "true"
+    if(!isset($_SESSION["starsign"])) {
+        echo json_encode("Det finns inget att ta bort.");
     } else {
-        echo "else"
         session_destroy();
+        echo json_encode("Ditt horoskop har nu raderats.");
     }
-} else {
-    echo "Not a Request by Delete"
 }
-
 ?>
-
