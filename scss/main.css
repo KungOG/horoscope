@@ -8,13 +8,12 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background: darkslategray;
+  background: url("../img/background.jpg");
   margin: 0;
+  height: 100vh;
 }
 
 body .content {
-  background: black;
-  padding: 2rem;
   justify-items: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -29,26 +28,28 @@ body .content #horoscope {
 
 body .content p {
   color: white;
-  background: darkblue;
+  background: black;
   padding: .7rem;
   margin: 1rem .7rem;
 }
 
 body .content form {
-  margin: 1rem;
-  background: lightcoral;
-  justify-items: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  background: 173;
+  display: -ms-grid;
+  display: grid;
 }
 
 body .content form input {
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: .6rem;
   margin: .4rem;
 }
 
-body .content .btn {
+body .content form .btn {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -58,33 +59,37 @@ body .content .btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background: grey;
   margin: 0;
 }
 
-body .content .btn a {
+body .content form .btn a {
   padding: .5rem;
   margin: .5rem;
-  background: darkcyan;
   text-decoration: none;
   color: black;
 }
 
-body .content .btn a.fetch {
+body .content form .btn a img {
+  height: 32px;
+  width: 32px;
+}
+
+body .content form .btn a.fetch {
   background: green;
-  border: 2px solid black;
   border-radius: 999rem;
 }
 
-body .content .btn a.update {
+body .content form .btn a.update {
   background: yellow;
-  border: 2px solid black;
   border-radius: 999rem;
 }
 
-body .content .btn a.delete {
+body .content form .btn a.delete {
   background: red;
-  border: 2px solid black;
   border-radius: 999rem;
+}
+
+body .content form .btn a:hover {
+  background: white;
 }
 /*# sourceMappingURL=main.css.map */

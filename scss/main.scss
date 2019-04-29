@@ -2,12 +2,11 @@ body {
     justify-content: center;
     align-items: center;
     display: flex;
-    background: darkslategray;
+    background: url('../img/background.jpg');
     margin: 0;
+    height: 100vh;
 
     .content {
-        background: black;
-        padding: 2rem;
         justify-items: center;
         align-items: center;
         display: grid;
@@ -18,52 +17,53 @@ body {
         
         p {
             color: white;
-            background: darkblue;
+            background: black;
             padding: .7rem;
             margin: 1rem .7rem;
         }
         
         form {
-            margin: 1rem;
-            background: lightcoral;
-            justify-items: center;
-            align-items: center;
-
+            background: blue($color: #016ead);
+            display: grid;
+         
             input {
+                align-content: center;
+                justify-content: center;
                 padding: .6rem;
                 margin: .4rem;
             }
-        }
-        .btn {
-            justify-content: center;
-            align-items: center;
-            display: flex;
-            background: grey;
-            margin: 0;
+            .btn {
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                margin: 0;
             
-           
-            a {
-                
-                padding: .5rem;
-                margin: .5rem;
-                background: darkcyan;
-                text-decoration: none;
-                color: black;
-        
-                &.fetch {
-                    background: green;
-                    border: 2px solid black;
-                    border-radius: 999rem;
-                }
-                &.update {
-                    background: yellow;
-                    border: 2px solid black;
-                    border-radius: 999rem;
-                }
-                &.delete {
-                    background: red;
-                    border: 2px solid black;
-                    border-radius: 999rem;
+                a {
+                    padding: .5rem;
+                    margin: .5rem;
+                    text-decoration: none;
+                    color: black;
+
+                    img {
+                        height: 32px;
+                        width: 32px;
+                    }
+            
+                    &.fetch {
+                        background: green;
+                        border-radius: 999rem;
+                    }
+                    &.update {
+                        background: yellow;
+                        border-radius: 999rem;
+                    }
+                    &.delete {
+                        background: red;
+                        border-radius: 999rem;
+                    }
+                    &:hover {
+                        background: white;
+                    }
                 }
             }
         }
